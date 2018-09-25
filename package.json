@@ -1,11 +1,14 @@
 {
-  "name": "tx-watcher",
+  "name": "bcash-interlinker",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "bcash": "https://github.com/bcoin-org/bcash",
-    "lodash": "^4.17.11"
+    "bcrypto": "^1.1.0",
+    "lodash": "^4.17.11",
+    "math-buffer": "^0.1.1",
+    "p-event": "^2.1.0"
   },
   "devDependencies": {}
 }
