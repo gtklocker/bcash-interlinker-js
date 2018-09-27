@@ -1,4 +1,4 @@
-const { Script, MTX } = require('bcash');
+const {Script, MTX} = require('bcash');
 
 const SPV_TAG = Buffer.from('interlink');
 
@@ -10,11 +10,9 @@ function taggedSPVOutput(buffer) {
   return script.compile();
 }
 
-function taggedSPVTx(buffer) {
+module.exports = function taggedSPVTx(buffer) {
   const out = taggedSPVOutput(buffer);
   const mtx = new MTX();
   mtx.addOutput(out, 0);
   return mtx;
-}
-
-module.exports = taggedSPVTx;
+};

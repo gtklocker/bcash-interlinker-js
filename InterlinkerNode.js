@@ -3,7 +3,7 @@ const {fromRev} = require('bcash/lib/utils/util');
 const pEvent = require('p-event');
 
 const Interlink = require('./Interlink');
-const taggedSPVTx = require('./script');
+const taggedSPVTx = require('./TXHelpers');
 
 const MARKED_BLOCK_HASH =
   fromRev('00000000000001934669a81ecfaa64735597751ac5ca78c4d8f345f11c2237cf');
