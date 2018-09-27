@@ -1,0 +1,41 @@
+#!/usr/bin/env node
+
+'use strict';
+
+process.title = 'bch-interlinker';
+
+const assert = require('assert');
+const InterlinkerNode = require('../lib/InterlinkerNode');
+
+const node = new InterlinkerNode({
+  config: true,
+  argv: true,
+  env: true,
+  logFile: true,
+  logConsole: true,
+  logLevel: 'debug',
+  db: 'leveldb',
+  memory: false,
+  persistent: true,
+  workers: true,
+  listen: true,
+  loader: require
+});
+
+process.on('unhandledRejection', (err, promise) => {
+  throw err;
+});
+
+(async () => {
+  await node.ensure();
+  console.log('prefix =', node.config.prefix);
+  console.log('network =', node.chain.network);
+  await node.open();
+  await node.connect();
+
+  node.startSync();
+  node.startInterlinking();
+})().catch((err) => {
+  console.error(err.stack);
+  process.exit(1);
+});

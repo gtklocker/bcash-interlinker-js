@@ -1,7 +1,10 @@
 {
   "name": "bcash-interlinker",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./lib/InterlinkerNode.js",
+  "bin": {
+    "bch-interlinker": "./bin/bch-interlinker"
+  },
   "license": "MIT",
   "dependencies": {
     "bcash": "https://github.com/bcoin-org/bcash",
