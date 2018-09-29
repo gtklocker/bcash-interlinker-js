@@ -13,7 +13,7 @@ const node = new InterlinkerNode({
   env: true,
   logFile: true,
   logConsole: true,
-  logLevel: 'debug',
+  logLevel: 'info',
   db: 'leveldb',
   memory: false,
   persistent: true,
